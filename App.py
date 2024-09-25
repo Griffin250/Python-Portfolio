@@ -39,3 +39,5 @@ with right_column:
        """
     )
     st.write("[Learn more >](griffintechs.site)")
+
+st.write("---")
