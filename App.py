@@ -1,6 +1,6 @@
-import requests
+#import requests
 import streamlit as st
-from streamlit_lottie import st_lottie
+#from streamlit_lottie import st_lottie
 
 with st.container():
     st.subheader("Hey am Isiah Griffin :wave:")
@@ -11,16 +11,9 @@ with st.container():
 
     st.write("For more info, visit me at [griffintechs.site](https://griffin250.github.io/IsiahTuyisenge/)")
 
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
 
-#-----Load Assets--------
-lottie_coding = load_lottieurl("https://lottie.host/7a9b69e6-8a49-4e40-ac96-b64afbf068a4/Bj6EbPVHSN.json")
 st.write("----")
-st.header("What i Do")
+st.header("My Services!")
 left_column, right_column = st.columns(2)
 with left_column:
     st.write("##")
@@ -33,6 +26,8 @@ with left_column:
      )
     st.write("[Learn more >](griffintechs.site)")
 
+with right_column:
+    st.write("##")
     st.subheader("UI/UX Designing")
     st.write(
        """
@@ -42,10 +37,6 @@ with left_column:
        """
     )
     st.write("[Learn more >](griffintechs.site)")
-
-with right_column:
-    st.write("##")
-    st.lottie(lottie_coding, height=500, key="Coding")
 
 st.write("---")
 #------Contact form----------------
