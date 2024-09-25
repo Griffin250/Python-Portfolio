@@ -11,9 +11,8 @@ with st.container():
 
     st.write("For more info, visit me at [griffintechs.site](https://griffin250.github.io/IsiahTuyisenge/)")
 
-
 st.write("----")
-st.header("My Services!")
+st.header("What i Do")
 left_column, right_column = st.columns(2)
 with left_column:
     st.write("##")
@@ -26,8 +25,6 @@ with left_column:
      )
     st.write("[Learn more >](griffintechs.site)")
 
-with right_column:
-    st.write("##")
     st.subheader("UI/UX Designing")
     st.write(
        """
@@ -37,6 +34,9 @@ with right_column:
        """
     )
     st.write("[Learn more >](griffintechs.site)")
+
+with right_column:
+    st.write("##")
 
 st.write("---")
 #------Contact form----------------
