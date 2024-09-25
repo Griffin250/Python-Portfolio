@@ -1,19 +1,24 @@
-#import requests
+import requests
 import streamlit as st
-#from streamlit_lottie import st-lottie
+from streamlit_lottie import st_lottie
 
 with st.container():
     st.subheader("Hey am Isiah Griffin :wave:")
     st.title("A web devloper from Norway")
-
 
     st.write("I am an IT engineer, specialising in Web Development, UI/UX Designing and Media Production with a strong background in Cybertech and AI.")
     st.write("My goal is to simplify the digital experience for users and build memorable, engaging, and efficient digital products.")
 
     st.write("For more info, visit me at [griffintechs.site](https://griffin250.github.io/IsiahTuyisenge/)")
 
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
 #-----Load Assets--------
-lottie_coding = "https://lottie.host/7a9b69e6-8a49-4e40-ac96-b64afbf068a4/Bj6EbPVHSN.json"
+lottie_coding = load_lottieurl("https://lottie.host/7a9b69e6-8a49-4e40-ac96-b64afbf068a4/Bj6EbPVHSN.json")
 st.write("----")
 st.header("What i Do")
 left_column, right_column = st.columns(2)
@@ -28,8 +33,6 @@ with left_column:
      )
     st.write("[Learn more >](griffintechs.site)")
 
-with right_column:
-    st.write("##")
     st.subheader("UI/UX Designing")
     st.write(
        """
@@ -40,4 +43,26 @@ with right_column:
     )
     st.write("[Learn more >](griffintechs.site)")
 
+with right_column:
+    st.write("##")
+    st.lottie(lottie_coding, height=500, key="Coding")
+
 st.write("---")
+#------Contact form----------------
+st.title("Get in Touch with Me!")
+contact_form = """
+<form action="https://formsubmit.co/isiahgriffin777@gmail.com" method="POST">
+     <input type="text" name="name" placeholder="Enter your Name" required>
+     <input type="email" name="email"placeholder="Enter your E-mail" required><br><br>
+      <textarea id="message" type="message" class="textarea" placeholder="Enter your Message here....!"></textarea><br>
+     <button type="submit">Send</button>
+</form>
+    """
+st.markdown(contact_form, unsafe_allow_html=True)
+st.empty()
+
+# import local css file for the acontact form.
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</stye>", unsafe_allow_html=True)
+local_css("styles/styles.css")
