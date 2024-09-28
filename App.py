@@ -1,34 +1,9 @@
 #import requests
 import streamlit as st
 #from streamlit_lottie import st_lottie
-from streamlit_option_menu import option_menu
-
-#-------Top navbar------------
-#with st.sidebar:
-selected = option_menu(
-        menu_title = None,
-        options = ["Home", "About", "Services", "Portfolio", "Contacts"],
-        orientation = "horizontal",
-        default_index =0,
-    )
-# You can now check which option is selected and display corresponding content
-if selected == "Home":
-    st.write("You selected Home")
-elif selected == "About":
-    st.write("You selected About")
-elif selected == "Services":
-    st.write("You selected Services")
-elif selected == "Portfolio":
-    st.write("You selected Portfolio")
-elif selected == "Contacts":
-    st.write("You selected Contacts")
-
-
-
 
 with st.container():
     st.subheader("Hey am Isiah Griffin :wave:")
-    st.write("This is to Test for Changes made in the Repo!")
     st.title("A web devloper from Norway")
 
     st.write("I am an IT engineer, specialising in Web Development, UI/UX Designing and Media Production with a strong background in Cybertech and AI.")
@@ -36,14 +11,6 @@ with st.container():
 
     st.write("For more info, visit me at [griffintechs.site](https://griffin250.github.io/IsiahTuyisenge/)")
 
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
-#-----Load Assets--------
-lottie_coding = load_lottieurl("https://lottie.host/7a9b69e6-8a49-4e40-ac96-b64afbf068a4/Bj6EbPVHSN.json")
 st.write("----")
 st.header("What i Do")
 left_column, right_column = st.columns(2)
@@ -70,7 +37,6 @@ with left_column:
 
 with right_column:
     st.write("##")
-    st.lottie(lottie_coding, height=500, key="Coding")
 
 st.write("---")
 
@@ -92,36 +58,3 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</stye>", unsafe_allow_html=True)
 local_css("styles/styles.css")
-
-
-import streamlit as st
-
-footer="""<style>
-a:link , a:visited{
-color: blue;
-background-color: transparent;
-text-decoration: underline;
-}
-
-a:hover,  a:active {
-color: red;
-background-color: transparent;
-text-decoration: underline;
-}
-
-.footer {
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-background-color: whitesmoke;
-color: black;
-text-align: center;
-}
-</style>
-<div class="footer">
-<h4>Hey am being hostet on a Test branch! </h4>
-<p>Developed with ❤ by <a style='display: block; text-align: center;' href="#" target="_blank">Griffin Techs</a></p>
-</div>
-"""
-st.markdown(footer,unsafe_allow_html=True)
