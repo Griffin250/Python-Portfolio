@@ -1,9 +1,10 @@
-#import requests
+import requests
 import streamlit as st
-#from streamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie
 
 with st.container():
     st.subheader("Hey am Isiah Griffin :wave:")
+    st.write("This is to Test for Changes made in the Repo!")
     st.title("A web devloper from Norway")
 
     st.write("I am an IT engineer, specialising in Web Development, UI/UX Designing and Media Production with a strong background in Cybertech and AI.")
