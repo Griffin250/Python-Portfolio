@@ -1,6 +1,6 @@
-import requests
+#import requests
 import streamlit as st
-from streamlit_lottie import st_lottie
+#from streamlit_lottie import st_lottie
 
 with st.container():
     st.subheader("Hey am Isiah Griffin :wave:")
