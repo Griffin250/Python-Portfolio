@@ -39,6 +39,7 @@ with right_column:
     st.write("##")
 
 st.write("---")
+
 #------Contact form----------------
 st.title("Get in Touch with Me!")
 contact_form = """
